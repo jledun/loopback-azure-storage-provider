@@ -1,0 +1,27 @@
+{
+  "name": "loopback-azure-storage-provider",
+  "version": "1.0.0",
+  "description": "Azure Storage provider for loopback-component-storage",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@iohub:loopback-azure-storage-provider"
+  },
+  "keywords": [
+    "loopback-component-storage",
+    "azure-storage",
+    "loopback",
+    "azure"
+  ],
+  "author": "Julien Ledun <j.ledun@iosystems.fr>",
+  "license": "MIT",
+  "dependencies": {
+    "async": "^2.6.2",
+    "azure-storage": "^2.10.3",
+    "pkgcloud": "^1.7.0",
+    "strong-globalize": "^4.1.3"
+  }
+}
