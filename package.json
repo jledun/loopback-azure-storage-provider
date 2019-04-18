@@ -1,6 +1,6 @@
 {
   "name": "loopback-azure-storage-provider",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Azure Storage provider for loopback-component-storage",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@iohub:loopback-azure-storage-provider"
+    "url": "https://github.com/jledun/loopback-azure-storage-provider.git"
   },
   "keywords": [
     "loopback-component-storage",
