@@ -1,19 +1,17 @@
-// Copyright IBM Corp. 2013,2015. All Rights Reserved.
-// Node module: loopback-component-storage
-// This file is licensed under the Artistic License 2.0.
-// License text available at https://opensource.org/licenses/Artistic-2.0
+/* 
+ * MIT Licence - copyright 2019 Julien Ledun <j.ledun@iosystems.fr>
+ *
+ * */
 'use strict';
 
 // Globalization
 const g = require('strong-globalize')();
 
 /**
- * Azure storage based on storage provider
+ * Azure storage based on filesystem storage provider
  */
 
-const fs = require('fs'),
-  azureStorage = require('azure-storage'),
-  path = require('path'),
+const azureStorage = require('azure-storage'),
   stream = require('stream'),
   async = require('async'),
   File = require('./file').File,
@@ -79,6 +77,11 @@ function streamError(errStream, err, cb) {
 const writeStreamError = streamError.bind(null, new stream.Writable());
 const readStreamError = streamError.bind(null, new stream.Readable());
 
+/* 
+ * Containers functions
+ * = directories in Microsoft Azure Storage
+ *
+ * */
 AzureStorageProvider.prototype.getContainers = function(cb) {
   cb = cb || utils.createPromiseCallback();
 
@@ -155,7 +158,11 @@ AzureStorageProvider.prototype.getContainer = function(directoryName, cb) {
   return cb.promise;
 };
 
-// File related functions
+
+/*
+ * File related functions
+ *
+ * */
 AzureStorageProvider.prototype.upload = function(options, cb) {
   const container = options.container;
   if (!validateName(container)) {
@@ -279,3 +286,4 @@ AzureStorageProvider.prototype.removeFile = function(directoryName, fileName, cb
   });
   return cb.promise;
 };
+
